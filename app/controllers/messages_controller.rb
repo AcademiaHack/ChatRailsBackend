@@ -28,6 +28,11 @@ class MessagesController < ApplicationController
     @message.destroy
   end
 
+  def destroy_all
+    Message.delete_all
+    render json: []
+  end
+
   private
   def message_params
     params.permit(:message)
